@@ -1,0 +1,18 @@
+#*** pai(joao, carlos).
+#pai(carlos, maria).
+#pai(carlos, pedro).
+from pyDatalog import pyDatalog
+
+# Definindo a base de conhecimento em pyDatalog
+pyDatalog.create_terms('pai')
+
+# Importando os fatos da base de conhecimento em Prolog
++ pai('joao', 'carlos')
++ pai('carlos', 'maria')
++ pai('carlos', 'pedro')
+
+# Fazendo consultas
+print(pai('joao', 'carlos'))  
+print(pai('carlos', 'maria'))  
+print(pai('joao', 'maria'))  
+
