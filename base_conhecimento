@@ -1,18 +1,26 @@
-#*** pai(joao, carlos).
-#pai(carlos, maria).
-#pai(carlos, pedro).
 from pyDatalog import pyDatalog
 
-# Definindo a base de conhecimento em pyDatalog
-pyDatalog.create_terms('pai')
+# Definindo a base de conhecimento
+pyDatalog.create_terms('pai, filho')
 
-# Importando os fatos da base de conhecimento em Prolog
-+ pai('joao', 'carlos')
-+ pai('carlos', 'maria')
-+ pai('carlos', 'pedro')
+# Regras
++ pai('João', 'Carlos')
++ pai('Carlos', 'Maria')
++ pai('Carlos', 'Pedro')
 
-# Fazendo consultas
-print(pai('joao', 'carlos'))  
-print(pai('carlos', 'maria'))  
-print(pai('joao', 'maria'))  
+# Consultas
+if pai('João', 'Carlos'):
+    print('João é pai de Carlos')
+else:
+    print('João não é pai de Carlos')
+
+if pai('Carlos', 'Maria'):
+    print('Carlos é pai de Maria')
+else:
+    print('Carlos não é pai de Maria')
+
+if pai('João', 'Maria'):
+    print('João é pai de Maria')
+else:
+    print('João não é pai de Maria')
 
